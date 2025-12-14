@@ -21,9 +21,13 @@ public:
         while (curr != nullptr)
         {
             next = curr->next;
+            // first we place the "next" pointer to the next value of current 
             curr->next = prev;
+            // ! this is the most important part of reverse, 
+            //! we reverse the current's pointer connection to the previous
             prev = curr;
             curr = next;
+            // ** then we just update the current and previous
         }
         return prev;
     }
