@@ -88,6 +88,63 @@ public:
             delete temp;
         }
     }
+    void insert(int val, int idx)
+    {
+        if (idx < 0)
+        {
+            cout << "invalid index" << endl;
+        }
+        else if (idx == 0)
+        {
+            push_front(val);
+            return;
+        }
+
+        else
+        {
+            Node *newNode = new Node(val);
+            Node *temp = head;
+            for (int i = 0; i < idx - 1; i++)
+            {
+                temp = temp->next;
+            }
+            if (temp->next == nullptr)
+            {
+                push_back(val);
+                return;
+            }
+
+            newNode->next = temp->next;
+            newNode->prev = temp;
+            temp->next->prev = newNode;
+            temp->next = newNode;
+        }
+    }
+    void delete_at_idx(int idx)
+    {
+        if (idx == 0)
+        {
+            pop_front();
+            return;
+        }
+        Node *temp = head;
+        for (int i = 0; i < idx; i++)
+        {
+            temp = temp->next;
+        }
+        if (temp == nullptr)
+        {
+            return;
+        }
+        temp->prev->next = temp->next;
+        if (temp != tail)
+        {
+            temp->next->prev = temp->prev;
+        }
+        else
+            tail = temp->prev;
+        delete temp;
+    }
     void print()
     {
         Node *temp = head;
