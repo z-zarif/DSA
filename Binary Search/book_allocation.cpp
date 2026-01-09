@@ -19,6 +19,7 @@ bool isvalid(vector<int> &arr, int n, int m)
         {
             stu++;
             pages = arr[i];
+            
         }
         
     }
