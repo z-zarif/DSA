@@ -56,6 +56,8 @@ int kthsmallest(Node *root, int k)
     inorder(root, arr);
     return arr[k - 1];
 }
+
+
 int main()
 {
     fastIO();
