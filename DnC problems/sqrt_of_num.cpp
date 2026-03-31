@@ -11,8 +11,8 @@ int floorSqrt(int n)
 {
     int low = 1;
     int high = n;
-    int result;
-    while (high > low)
+    int result = 0;
+    while (low <= high)
     {
         int mid = (low + high) / 2;
         if (mid * mid <= n)
@@ -29,7 +29,7 @@ int floorSqrt(int n)
 }
 int main()
 {
-    int n = 16;
+    int n = 25;
     cout << floorSqrt(n);
     return 0;
 }
