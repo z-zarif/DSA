@@ -9,6 +9,9 @@ public:
     bool isValid(string s)
     {
         stack<char> s1;
+        stack<pair<char,int>>s2;
+        s2.push({'a',-1});
+        
         for (int i = 0; i < s.length(); i++)
         {
             if (s[i] == '(' || s[i] == '{' || s[i] == '[')

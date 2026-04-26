@@ -25,7 +25,7 @@ public:
     {
         head = tail = nullptr;
     };
-    void push_front(int val)//O(1)
+    void push_front(int val) // O(1)
     {
         Node *newNode = new Node(val);
         // ektu confusing, but basically,
@@ -47,7 +47,7 @@ public:
             // to make it in the front
         }
     }
-    void push_back(int val)//O(1)
+    void push_back(int val) // O(1)
     {
         Node *newNode = new Node(val);
         if (head == nullptr)
@@ -60,7 +60,7 @@ public:
             tail = newNode;
         }
     }
-    void pop_front()// O(1)
+    void pop_front() // O(1)
     {
         if (head == nullptr)
         {
@@ -77,7 +77,7 @@ public:
         // then we delete the temp
         delete temp;
     }
-    void pop_back()//O(n)
+    void pop_back() // O(n)
     {
         if (head == nullptr)
         {
@@ -96,7 +96,7 @@ public:
         // we have to delete the previous tail, nahole there is a memory leak issue.
         tail = temp;
     }
-    void insert(int val, int pos)//O(n)
+    void insert(int val, int pos) // O(n)
     {
         if (pos < 0)
         {
@@ -125,7 +125,7 @@ public:
             temp->next = newNode;
         }
     }
-    int search(int key)//O(n)
+    int search(int key) // O(n)
     {
         Node *temp = head;
         int i = 0;
@@ -140,7 +140,7 @@ public:
         }
         return -1;
     }
-    void display()//O(n)
+    void display() // O(n)
     {
         Node *temp = head;
         while (temp != nullptr)
